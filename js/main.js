@@ -10,7 +10,21 @@
   })
 
   //Page Loader
+  // Show the page loader
+function showLoader() {
+	document.getElementById("loader-container").style.display = "block";
+  }
   
+  // Hide the page loader
+  function hideLoader() {
+	document.getElementById("loader-container").style.display = "none";
+  }
+  
+  // Call showLoader() when the page starts loading
+  window.addEventListener("load", showLoader);
+  
+  // Call hideLoader() when the page finishes loading
+  window.addEventListener("load", hideLoader);
 
   // Preloader
   $(window).on('load', function () {
@@ -20,6 +34,29 @@
       });
     }
   });
+
+  //Page Loader 2
+  // Function to update the width of the progress bar
+function updateProgressBar(progress) {
+	document.getElementById("progress-bar").style.width = progress + "%";
+  }
+  
+  // Simulate the progress of the loader
+  function simulateLoader() {
+	let progress = 0;
+	const interval = setInterval(() => {
+	  progress += Math.floor(Math.random() * 10); // Generate random progress increment
+	  progress = Math.min(progress, 100); // Limit progress to 100%
+	  updateProgressBar(progress); // Update the progress bar width
+  
+	  if (progress >= 100) {
+		clearInterval(interval); // Stop the simulation when progress reaches 100%
+	  }
+	}, 500); // Adjust the interval to control the speed of the progress
+  }
+  
+  // Call the simulateLoader function to start the progress simulation
+  window.addEventListener("load", simulateLoader);
 
   // Back to top button
   $(window).scroll(function() {
@@ -103,6 +140,8 @@
 			backSpeed: 30
 		});
 	}
+
+	
 
 	/*--/ Testimonials owl /--*/
 	$('#testimonial-mf').owlCarousel({
