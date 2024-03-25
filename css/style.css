@@ -1194,6 +1194,9 @@ section.img-cont .item:hover {
 .contact-mf {
   margin-top: 4rem;
 }
+.{
+
+}
 
 /*======================================
 //--//-->   FOOTER
@@ -1622,6 +1625,20 @@ section.map .info-item a:hover {
     bottom: 15px;
   }
 }
+
+@media (max-width:992px) {
+  section.map .info-item {
+    margin-top: 30px;
+  }
+  .section-counter{
+    margin-top: 30px;
+  }
+
+  .elementor-container{
+      align-items: center;
+  }
+}
+
 
 /*FOOTER*/
 .footer {
